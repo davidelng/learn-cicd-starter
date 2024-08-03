@@ -30,7 +30,6 @@ func TestGetAPIKey(t *testing.T) {
 	t.Run("Missing headers", func(t *testing.T) {
 		h := http.Header{}
 		h.Add("Content-Type", "application/json")
-		h.Add("Authorization", "ApiKey abcdefghijkl")
 		_, err := GetAPIKey(h)
 		if err == nil {
 			t.Errorf("Expecting an error but haven't got one")
